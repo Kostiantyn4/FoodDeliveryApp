@@ -1,0 +1,15 @@
+<swiper
+  [slidesPerView]="1.1"
+  [pagination]="{
+    clickable: true 
+  }"
+  [keyboard]="{
+    enabled: true
+  }"
+  [virtual]="true"
+  class="border-bottom"
+>
+  <ng-template swiperSlide *ngFor="let bannerImage of bannerImages | async; index as i">
+    <div [ngStyle]="{'background-image' : 'url(' + bannerImage + ')'}"></div>
+  </ng-template>
+</swiper>
